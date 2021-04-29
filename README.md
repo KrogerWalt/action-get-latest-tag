@@ -43,7 +43,7 @@ jobs:
         id: release-label
         if: ${{ github.event.pull_request.merged == true }}
 
-      - uses: actions-ecosystem/action-get-latest-tag@v1
+      - uses: KrogerWalt/action-get-latest-tag@v2
         id: get-latest-tag
         if: ${{ steps.release-label.outputs.level != null }}
 
