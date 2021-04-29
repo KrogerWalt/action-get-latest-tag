@@ -6,10 +6,6 @@ but we only use v*.*.* pattern tags, so this way always worked for us.
 
 # Action Get Latest Tag
 
-[![actions-workflow-lint][actions-workflow-lint-badge]][actions-workflow-lint]
-[![release][release-badge]][release]
-[![license][license-badge]][license]
-
 This is a GitHub Action to get a latest Git tag.
 
 It would be more useful to use this with other GitHub Actions' outputs.
