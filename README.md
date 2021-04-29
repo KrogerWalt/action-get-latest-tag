@@ -12,7 +12,6 @@ It would be more useful to use this with other GitHub Actions' outputs.
 
 |          NAME          |                                                  DESCRIPTION                                                  |   TYPE   | REQUIRED | DEFAULT  |
 |------------------------|---------------------------------------------------------------------------------------------------------------|----------|----------|----------|
-| `semver_only`          | Whether gets only a tag in the shape of semver. `v` prefix is accepted for tag names.                         | `bool`   | `false`  | `false`  |
 | `initial_version`      | The initial version. Works only when `inputs.with_initial_version` == `true`.                                 | `string` | `false`  | `v0.0.0` |
 | `with_initial_version` | Whether returns `inputs.initial_version` as `outputs.tag` if no tag exists. `true` and `false` are available. | `bool`   | `false`  | `true`   |
 
