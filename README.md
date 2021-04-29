@@ -1,3 +1,9 @@
+# Forked Repo Notes
+
+The orginal code was not working for us, it would often grab the penultimate version instead of the latest, 
+which caused a tag collision when we bumped it and tried to push the tag.  This code is slightly less flexible, 
+but we only use v*.*.* pattern tags, so this way always worked for us.  
+
 # Action Get Latest Tag
 
 [![actions-workflow-lint][actions-workflow-lint-badge]][actions-workflow-lint]
@@ -15,24 +21,6 @@ It would be more useful to use this with other GitHub Actions' outputs.
 | `initial_version`      | The initial version. Works only when `inputs.with_initial_version` == `true`.                                 | `string` | `false`  | `v0.0.0` |
 | `with_initial_version` | Whether returns `inputs.initial_version` as `outputs.tag` if no tag exists. `true` and `false` are available. | `bool`   | `false`  | `true`   |
 
-If `inputs.semver_only` is `true`, the latest tag among tags with semver will be set for `outputs.tag`.
-
-This input is useful for versioning that binds a major version is the latest of that major version (e.g., `v1` == `v1.*`), like GitHub Actions.
-In such a case, the actual latest tag is a major version, but the version isn't as we expected when we want to work with semver.
-
-Let's say you did the following versioning.
-
-```console
-$ git tag v1.0.0 && git push origin v1.0.0
-$ # some commits...
-$ git tag v1.1.0 && git push origin v1.1.0
-$ git tag v1 && git push origin v1 # bind v1 to v1.1.0.
-```
-
-In such a case, `outputs.tag` varies like this:
-
-- `inputs.semver_only`=`false` -> `outputs.tag`=`v1`
-- `inputs.semver_only`=`true` -> `outputs.tag`=`v1.1.0`
 
 ## Outputs
 
