@@ -6,7 +6,7 @@ git fetch --tags
 # This suppress an error occurred when the repository is a complete one.
 git fetch --prune --unshallow || true
 
-latest_tag=$(git tag -l --sort=taggerdate | sed '$!d')
+latest_tag=$(git tag -l --sort=version:refname | sed '$!d')
 
 echo "Found latest tag: ${latest_tag}"
 
