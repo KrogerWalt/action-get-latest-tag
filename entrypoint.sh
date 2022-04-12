@@ -2,6 +2,9 @@
 
 set -e
 
+# This is a workaround for a security fix in git that prevents a user from accessing an untrusted workspace
+git config --global --add safe.directory /github/workspace
+
 git fetch --tags
 # This suppress an error occurred when the repository is a complete one.
 git fetch --prune --unshallow || true
